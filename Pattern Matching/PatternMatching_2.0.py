@@ -46,12 +46,12 @@ import re
 #object creator (the r is used to pass the string as raw (no escape chars))
 phoneNumRegex = re.compile(r'\d\d\d-\d\d\d-\d\d\d\d')
 #MO stands for Match Objects
-mo = phoneNumRegex.search('My number is 334-289-3535.')
+mo = phoneNumRegex.search('My number is 354-289-3492.')
 print('Phone number found: ' + mo.group())
 
 #Pattern can even be filtered with parentheses. dividing the match in groups
 numRegex = re.compile(r'(\d\d\d)-(\d\d\d-\d\d\d\d)')
-mo = numRegex.search('My number is 334-289-3535.')
+mo = numRegex.search('My number is 354-289-3492.')
 print('Prefix is '+mo.group(1))
 print('Suffix is '+mo.group(2))
 
