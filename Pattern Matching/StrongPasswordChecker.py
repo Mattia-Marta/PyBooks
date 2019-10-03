@@ -1,4 +1,3 @@
-'''
 from re import compile, search
 
 REGEX = compile(r'\d+[^0-9a-zA-Z]*[A-Z]+[^0-9a-zA-Z]*[a-z]+')
