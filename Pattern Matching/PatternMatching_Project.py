@@ -9,7 +9,6 @@
  and then run your program. It could replace the text on the clipboard 
  with just the phone numbers and email addresses it finds.
 '''
-
 #TODO: 
 #? 1- Get the text from the clipboard 
 #? 2- Look for patterns (numbers and mails) with regex
@@ -36,8 +35,9 @@ mailRegex = re.compile(r'''(
 
 #?Find matches in clipboard
 text = str(clipboard.paste())
-#Debugging test 
-print (text)
+
+#Debugging test print (text)
+
 matches = []
 for groups in phoneRegex.findall(text):
     phoneNum = '-'.join([groups[1], groups[3], groups[5]])
