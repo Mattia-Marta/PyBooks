@@ -38,8 +38,3 @@ for filename in myFiles:
 #C:\Users\asweigart\accounts.txt
 #C:\Users\asweigart\details.csv
 #C:\Users\asweigart\invite.docx
-
-
-
-
-

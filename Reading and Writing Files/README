@@ -1,0 +1,11 @@
+In this folder you will find a brief introduction to:
+
+    - path management (move around pc folders using py),
+
+    - brief intro to Files (read, write, append)
+
+    - storing variables using shelve e pprint.pformat().
+
+PLUS
+
+    - A practice application generating "unique" tests on capitals of America.
