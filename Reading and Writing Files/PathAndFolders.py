@@ -16,6 +16,10 @@ Appending smthing to path.* you can
  - exists(path): bool, return true if the path exists
  - isfile(path): bool, return True if it exists and is a file
  - isdir(path): bool, return True if it exists and is a directory
+
+To navigate a directory is possible to use os.walk(path), useful if you want to rename all the files in a dir
+
+
 '''
 
 import os
@@ -38,3 +42,17 @@ for filename in myFiles:
 #C:\Users\asweigart\accounts.txt
 #C:\Users\asweigart\details.csv
 #C:\Users\asweigart\invite.docx
+
+#This program will print all the file walking through the folders
+
+for folderName, subfolders, filenames in os.walk('C:\\delicious'):    
+    print('The current folder is ' + folderName)    
+
+    for subfolder in subfolders:        
+        print('SUBFOLDER OF ' + folderName + ': ' + subfolder)
+
+    for filename in filenames:        
+        print('FILE INSIDE ' + folderName + ': '+ filename)    
+    
+    print('')
+
