@@ -33,6 +33,9 @@ findall() is like search but will return a list of strings of all the match, not
 The '.' is a wildcard character, it works as every char, like the '?' in web searches
 (.* goes straight into greedy mode)
 
+The '^' is a char used to force search to match something at the start.
+The '$' is a char used to force search to match something at the end.
+
 The re.compile() function can hold multiple arguments
 re.compile(r'x', re.IGNORECASE) or re.I to match case-insensitive chars
 
@@ -54,7 +57,7 @@ numRegex = re.compile(r'(\d\d\d)-(\d\d\d-\d\d\d\d)')
 mo = numRegex.search('My number is 354-289-3492.')
 print('Prefix is '+mo.group(1))
 print('Suffix is '+mo.group(2))
-
+66666666666665ry5
 #Pass 0 or nothing to print the whole match
 print('Whole number is '+mo.group(0))
 

@@ -3,7 +3,7 @@ cwd = current working directory;
 Double \\ is used, une for the path, one to escape the char.
 
 To create a folder use: makedirs($PATH)
-Appending smthing to path.* you can 
+Appending smthing to os.path.* you can 
  - join: obtain a path, the best way is using os.path.join('dir1', 'dir2'..., 'dirn'); it will use the right os separator
  - abspath(path): return a string of the absolute path
  - isabs(path): boolean, return true if it is an absolute path
