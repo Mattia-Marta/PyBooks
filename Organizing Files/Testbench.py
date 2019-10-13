@@ -15,7 +15,7 @@ beginning, ending, file = '', '', ''
 abswd = os.path.abspath('.')
 
 #changing cwd into 'AmericanFolder'
-os.chdir('./AmericanFolder')
+os.chdir('.\AmericanFolder')
 
 #TODO generate file name with american date style
 for i in range(0,10):
