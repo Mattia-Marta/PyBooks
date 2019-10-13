@@ -1,7 +1,12 @@
+'''
+Using the testbench you'll create files into the "AmericanFolder" to test the script
+'''
+
 #! python3
 
 import os, shutil, random, string
 
+#Generate a random string using random lower chars. Number can be modified)
 def randomString():
     return ''.join(random.choice(string.ascii_lowercase) for i in range(random.randint(4,12)))
 
@@ -9,8 +14,8 @@ beginning, ending, file = '', '', ''
 
 abswd = os.path.abspath('.')
 
-#americanFolder = os.path.join(abswd, 'AmericanFolder')
-os.chdir('./Organizing Files/AmericanFolder')
+#changing cwd into 'AmericanFolder'
+os.chdir('./AmericanFolder')
 
 #TODO generate file name with american date style
 for i in range(0,10):

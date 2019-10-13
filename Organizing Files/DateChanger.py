@@ -25,6 +25,7 @@ americanDate = re.compile(r"""^(.*?) # match the start in non greedy mode (look 
            (.*?)$                # get the text after the date, if any
            """, re.VERBOSE)
 # TODO: Loop over the files in the working directory.
+os.chdir('.\AmericanFolder')
 for file in os.listdir('.'):
     mo = americanDate.search(file)
     # TODO: Skip files without a date.
@@ -34,18 +35,18 @@ for file in os.listdir('.'):
     # TODO: Get the different parts of the filename.
     before = mo.group(1)
     month = mo.group(2)
-    day = mo.group(3)
-    year = mo.group(4)
-    after = mo.group(5)
+    day = mo.group(4)
+    year = mo.group(6)
+    after = mo.group(8)
 
     # TODO: Form the European-style filename.
     europeFile = before + day + '-' + month + '-' + year + after 
 
     # TODO: Get the full, absolute file paths.
-    abswd = os.path.abspath(path)
+    abswd = os.path.abspath('.')
     americanFile = os.path.join(abswd, file)
     europeFile = os.path.join(abswd, europeFile)
-    
+
     # TODO: Rename the files.
     shutil.move(americanFile, europeFile)
     count = count + 1
