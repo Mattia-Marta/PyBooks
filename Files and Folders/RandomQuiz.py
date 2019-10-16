@@ -36,7 +36,7 @@ capitals = {'Alabama': 'Montgomery', 'Alaska': 'Juneau', 'Arizona': 'Phoenix',
 'Vermont': 'Montpelier', 'Virginia': 'Richmond', 'Washington': 'Olympia', 
 'West Virginia': 'Charleston', 'Wisconsin': 'Madison', 'Wyoming': 'Cheyenne'}
 
-for quizNum in range(2):
+for quizNum in range(2):    
     #* TODO: Create the quiz and answer key files.
     quizFile = open('capitals%s.txt' % (quizNum+1), 'w')
     answerFile = open('capitals_solutions_%s.txt' % (quizNum+1), 'w')
@@ -69,7 +69,3 @@ for quizNum in range(2):
         answerFile.write('%s. %s\n' % (questionNum + 1, 'ABCD'[answerOptions.index(correctAnswer)]))
     quizFile.close()
     answerFile.close()
-
-
-        
-
