@@ -3,6 +3,8 @@
 Debugging code accounts for theother 90 percent."
 Exception is like "stop doing this and go to the exception statement"
 
+------------------------TRACEBACK------------------------
+
 Exceptions are raised with "raise" statement, done like follow:
 • The raise keyword
 • A call to the Exception() function
@@ -12,12 +14,21 @@ Getting the output of an error while still handling it, is possible using traceb
 Using traceback.format_exc() you get the traceback error as a string.
 This could be useful to output everything to a txt file
 
+------------------------ASSERTION------------------------
+
 An assertion is a sanity check to make sure your code isn’t doing something obviously wrong
 Assert statement consists of the following:
 • The assert keyword
 • A condition (that is, an expression that evaluates to True or False)
 • A comma
 • A string to display when the condition is False
+
+Running code with -0 param, will deactivate all the asserts.
+
+------------------------LOGGING------------------------
+STOP USING PRINT() TO DEBUG. 
+
+
 '''
 
 #Raise exception example
@@ -53,3 +64,6 @@ def switchLights(stoplight):
             stoplight[key] == 'green'
 
 switchLights(market_2nd)
+
+assert 'red' in stoplight.values(), 'Neither light is red! ' + str(stoplight) #use to see no red is in the zone
+
