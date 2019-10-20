@@ -26,9 +26,18 @@ Assert statement consists of the following:
 Running code with -0 param, will deactivate all the asserts.
 
 ------------------------LOGGING------------------------
-STOP USING PRINT() TO DEBUG. 
+STOP USING PRINT() TO DEBUG. Is better using these 2 lines of code 
+to display log messages as the program run.
 
+"import logging
+logging.basicConfig(level=logging.DEBUG, format=' %(asctime)s -  %(levelname)s  -  %(message)s')"
 
+To see an example of debug in use, look at the file called "FactorialLog.py"
+
+Level of Logging danger: Debug, Info, Warning, Error, Critical.
+
+To disable the log printing, instead of going through the code and erasing them,
+you can just add "logging.disable(logging.CRITICAL)" to the logs after this message.
 '''
 
 #Raise exception example
@@ -66,4 +75,6 @@ def switchLights(stoplight):
 switchLights(market_2nd)
 
 assert 'red' in stoplight.values(), 'Neither light is red! ' + str(stoplight) #use to see no red is in the zone
+
+#Using the LOGGING module to debug
 
