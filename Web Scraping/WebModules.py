@@ -19,7 +19,12 @@ Check "MapAddress.py to see a practical applicaiton of this command
 
 ------------------------REQUEST------------------------
 This module needs to be installed using 'pip install requests', it returns a Response obj.
-res.raise_for_status() output the captured exception. 
+res.raise_for_status() output the captured exception.
+
+It is possible to download files to the hard drive, only if saved in unicode (wb attribute).
+It can be done using a for to iterate over the obj's iter_content() using write() on each iteration
+to write the chunk to the file. After this, the file can be closed.
+
 '''
 
 import webbrowser
@@ -27,12 +32,22 @@ webbrowser.open('http://www.google.com') #launch default browser on a specific p
 
 #Example of request
 import requests
-res = requests.get('https://github.com/dlang/druntime/blob/master/benchmark/extra-files/dante.txt')
+res = requests.get('https://automatetheboringstuff.com/files/rj.txt')
 print (res.text[250:])
 
 #Managing errors with request
-res = requests.get('https://github.com/dlang/druntime/blob/master/benchmark/extra-files/vergil.txt')
+res = requests.get('https://automatetheboringstuff.com/files/romjul.txt')
 try:
     res.raise_for_status()
 except Exception as exc:
     print('There was a problem!. %s' % (exc))
+
+#Downloading an internet page to hard drive:
+import requests
+res = requests.get('https://automatetheboringstuff.com/files/rj.txt')
+res.raise_for_status()
+playFile = open('RomeoAndJuliet.txt', 'wb')
+for chunk in res.iter_content(100000):
+    playFile.write(chunk)
+
+playFile.close()
