@@ -25,6 +25,28 @@ It is possible to download files to the hard drive, only if saved in unicode (wb
 It can be done using a for to iterate over the obj's iter_content() using write() on each iteration
 to write the chunk to the file. After this, the file can be closed.
 
+------------------------BEAUTIFUL SOUP------------------------
+This module needs to be installed using 'pip install bs4'. The object you will work with
+can be obtained by a request.get() or using open('file.html') and then using bs4.BeautifulSoup(file)
+Elements of the web page can be retrieved using select() passing a string of css selector.
+
+soup.select('div')                   |  All elements named <div>
+soup.select('#author')               |  The element with an id attribute of author
+soup.select('.notice')               |  All elements that use a CSS class attribute named notice
+soup.select('div span')              |  All elements named <span> that are within an element named <div>
+soup.select('div > span')            |  All elements named <span> that are directly within an element named <div>, with no other element in between
+soup.select('input[name]')           |  All elements named <input> that have a name attribute with any value
+soup.select('input[type="button"]')  |  All elements named <input> that have an attribute named type with value button
+
+After the select() function, you can extrapolate almost everything using:
+results[i].getText() returns the content without tags
+results[i].attrs returns the list of attributes catch in a json-like style
+str(results[i]) returns the whole string, tags included.
+
+where results[i] is the element at the i position of the BeautifulSoup.
+
+the file i'll use for the explanation is example.html
+
 '''
 
 import webbrowser

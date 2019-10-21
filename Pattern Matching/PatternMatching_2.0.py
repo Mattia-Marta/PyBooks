@@ -57,7 +57,6 @@ numRegex = re.compile(r'(\d\d\d)-(\d\d\d-\d\d\d\d)')
 mo = numRegex.search('My number is 354-289-3492.')
 print('Prefix is '+mo.group(1))
 print('Suffix is '+mo.group(2))
-66666666666665ry5
 #Pass 0 or nothing to print the whole match
 print('Whole number is '+mo.group(0))
 
