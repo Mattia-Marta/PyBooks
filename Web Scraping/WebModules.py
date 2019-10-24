@@ -39,9 +39,9 @@ soup.select('input[name]')           |  All elements named <input> that have a n
 soup.select('input[type="button"]')  |  All elements named <input> that have an attribute named type with value button
 
 After the select() function, you can extrapolate almost everything using:
-results[i].getText() returns the content without tags
-results[i].attrs returns the list of attributes catch in a json-like style
-str(results[i]) returns the whole string, tags included.
+results[i].getText()    |    returns the content without tags
+results[i].attrs        |    returns the list of attributes catch in a json-like style
+str(results[i])         |    returns the whole string, tags included.
 
 where results[i] is the element at the i position of the BeautifulSoup.
 
@@ -73,3 +73,11 @@ for chunk in res.iter_content(100000):
     playFile.write(chunk)
 
 playFile.close()
+
+#Getting data from Element's Attributes
+import bs4
+soup = bs4.BeautifulSoup(open('example.html'), features="html.parser")
+spanEl = soup.select('span')[0]
+str(spanEl)
+spanEl.get('id')
+spanEl.attrs
