@@ -45,9 +45,16 @@ str(results[i])         |    returns the whole string, tags included.
 
 where results[i] is the element at the i position of the BeautifulSoup.
 
-the file i'll use for the explanation is example.html
+To learn more about bs4: http://www.crummy.com/software/BeautifulSoup/bs4/doc/
+
+------------------------SELENIUM------------------------
+Selenium allows you to interact with web pages in a much more advanced way than Requests and Beautiful Soup; 
+but because it launches a web browser, it is a bit slower and hard to run in the background.
+
 
 '''
+
+#the file i'll use for the explanation is example.html
 
 import webbrowser
 webbrowser.open('http://www.google.com') #launch default browser on a specific page.
