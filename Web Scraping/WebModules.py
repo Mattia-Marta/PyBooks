@@ -50,11 +50,49 @@ To learn more about bs4: http://www.crummy.com/software/BeautifulSoup/bs4/doc/
 ------------------------SELENIUM------------------------
 Selenium allows you to interact with web pages in a much more advanced way than Requests and Beautiful Soup; 
 but because it launches a web browser, it is a bit slower and hard to run in the background.
+Selenium module is initialized as 'from selenium import webdriver'. using webdriver.Firefox() opens up the designed browser.
 
+WebDriver objs have different methods for finding elements:
+browser.find_element_* and browser.find_elements_*; the first return a WebElement corresponding to the firts match,
+                                                    the second one, return a list with every match in the page.
+
+by_css_selector(selector)   |  Elements that match the CSS selector
+by_class_name(name)         |  Elements that use the CSS class name
+by_name(name)               |  Elements with a matching nameattribute value
+by_id(id)                   |  Elements with a matching id attribute value
+by_tag_name(name)           |  Elements with a matching nameattribute value (case unsensitive)
+by_link_text(text)          |  <a> elements that completely match the text provided 
+by_partial_link_text(text)  |  <a> elements that contain the text provided
+
+After the find_element function, you can navigate the content using:
+tag_name             |  The tag name, such as 'a' for an <a> element
+get_attribute(name)  |  The value for the element’s name attribute
+text                 |  The text within the element, such as 'hello' in <span>hello</span>
+clear()              |  For text field or text area elements, clears the text typed into it
+is_displayed()       |  Returns True if the element is visible; otherwise returns False
+is_enabled()         |  For input elements, returns True if the element is enabled; otherwise returns False
+is_selected()        |  For checkbox or radio button elements, returns True if the element is selected; otherwise returns False
+location             |  A dictionary with keys 'x' and 'y' for the position of the element in the page
+click()              |  Emulate a click in the page.
+
+Using selenium you can send keystrokes on a page if you find a textarea or an input field.
+The elem.send_keys(key) can even send special keys:
+Keys.ENTER/RETURN                |  The enter and return keys
+Keys.DOWN/UP/LEFT/RIGHT          |  The keyboard arrow keys
+Keys.HOME/END/PAGE_DOWN/PAGE_UP  |  The home, end, pagedown, and pageup keys
+Keys.ESCAPE/BACK_SPACE/DELETE    |  The esc, backspace, and delete keys
+Keys.F1/.../F12                  |  The F1 to F12 keys at the top of the keyboard
+Keys.TAB                         |  The tab key
+
+Some more useful commands, interacting with the browser window itself, are:
+browser.back()     |  Clicks the back button, going back to the previous page
+browser.forward()  |  Clicks the forward button, going to the next page
+browser.refresh()  |  Clicks the reload button to refresh the page
+browser.quit()     |  Clicks the 'x' closing the browser window
 
 '''
 
-#the file i'll use for the explanation is example.html
+#the file i'll use for this explanation is example.html
 
 import webbrowser
 webbrowser.open('http://www.google.com') #launch default browser on a specific page.
@@ -88,3 +126,14 @@ spanEl = soup.select('span')[0]
 str(spanEl)
 spanEl.get('id')
 spanEl.attrs
+
+#Application of selenium (will return "Found <img> element with that class name!")
+from selenium import webdriver
+browser = webdriver.Firefox()
+browser.get('http://inventwithpython.com')
+try:    
+    elem = browser.find_element_by_class_name('bookcover')    
+    print('Found <%s> element with that class name!' % (elem.tag_name))
+except:    
+    print('Was not able to find an element with that name.')
+    
