@@ -136,4 +136,3 @@ try:
     print('Found <%s> element with that class name!' % (elem.tag_name))
 except:    
     print('Was not able to find an element with that name.')
-    
