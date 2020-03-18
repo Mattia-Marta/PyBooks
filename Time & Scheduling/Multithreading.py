@@ -32,7 +32,7 @@ print('End of program.')
 Cats & Dogs & Frogs
 
 #With threads:
-threadObj = threading.Thread(target=print, args=['Cats', 'Dogs', 'Frogs'], kwargs={'sep': ' & '})
+>>> threadObj = threading.Thread(target=print, args=['Cats', 'Dogs', 'Frogs'], kwargs={'sep': ' & '})
 >>> threadObj.start()
 Cats & Dogs & Frogs
 
